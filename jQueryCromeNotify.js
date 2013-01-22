@@ -1,9 +1,9 @@
-jQuery.fn.powiadom = function (title, message){
+jQuery.fn.showNotify = function (ico, title, message){
     var notify = window.webkitNotifications;
     if (notify) {
         if (notify.checkPermission() == 0) {
             try{
-                var myNotification = notify.createNotification(null, title, message); 
+                var myNotification = notify.createNotification(ico, title, message); 
                 myNotification.onclick = function() {
 
                     window.focus();
